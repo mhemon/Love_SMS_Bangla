@@ -3,11 +3,14 @@ package com.xploreict.lovesmsbangla;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
-import android.preference.PreferenceManager;
+import static com.google.firebase.messaging.Constants.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +23,12 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,10 +39,31 @@ public class MainActivity extends AppCompatActivity {
     String message="";
     private InterstitialAd mInterstitialAd;
 
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+                        Log.d(TAG, "Firebase Token:-"+token);
+                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -94,7 +124,8 @@ public class MainActivity extends AppCompatActivity {
                             ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                             ClipData clip = ClipData.newPlainText("label", message);
                             clipboard.setPrimaryClip(clip);
-                            Toast.makeText(getApplicationContext(), "SMS Copied", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "SMS Copied", Toast.LENGTH_SHORT).show();
+                            Toasty.success(MainActivity.this, "SMS Copied!", Toast.LENGTH_SHORT, true).show();
                             if (mInterstitialAd.isLoaded()) {
                                 mInterstitialAd.show();
                             }
@@ -116,6 +147,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+    }this.doubleBackToExitPressedOnce = true;
+        Toasty.info(this, "Tap again to exit app", Toast.LENGTH_SHORT, true).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
     @Override

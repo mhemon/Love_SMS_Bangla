@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import static com.google.firebase.messaging.Constants.TAG;
 
 /**
  * Created by YoYo on 1/3/2017.
@@ -17,12 +21,21 @@ import com.google.firebase.messaging.RemoteMessage;
 public class FirebaseMassegingService extends FirebaseMessagingService {
 
     @Override
+    public void onNewToken(String token) {
+        Log.d(TAG, "Refreshed token: " + token);
+
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // Instance ID token to your app server.
+    }
+
+    @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         Intent intent=new Intent(this,MainActivity.class);
         if (remoteMessage.getData().size()>0){
-            String message =remoteMessage.getData().get("messages");
+            String message =remoteMessage.getData().get("love_messages");
             Bundle bundle=new Bundle();
-            bundle.putString("messages",message);
+            bundle.putString("love_messages",message);
             intent.putExtras(bundle);
         }
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

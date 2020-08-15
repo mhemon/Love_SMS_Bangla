@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
+
 import static android.content.Context.CLIPBOARD_SERVICE;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerviewHolder>{
@@ -51,7 +53,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
                 ClipboardManager clipboard = (ClipboardManager) v.getContext().getSystemService(CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("label", title);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(v.getContext(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+                Toasty.success(v.getContext(), "Copied Successful!", Toast.LENGTH_SHORT, true).show();
             }
         });
 
