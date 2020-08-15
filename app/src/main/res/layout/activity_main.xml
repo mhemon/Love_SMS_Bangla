@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="250.0dip"
+            android:layout_height="250.0dip"
+            android:layout_margin="40.0dip"
+            android:src="@drawable/app_icon"
+            android:background="?selectableItemBackground" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:id="@+id/main_button"
+                android:layout_width="70.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape"
+                android:gravity="center"
+                android:text="শুরু করুন"
+                android:textColor="@color/colorPrimary"
+                android:textSize="35.0dip" />
+
+            <Space
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:id="@+id/more_button"
+                android:layout_width="150.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="8.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape"
+                android:gravity="center"
+                android:text="আরও অ্যাপস"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20.0dip" />
+
+            <Button
+                android:id="@+id/five_star_button"
+                android:layout_width="150.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="8.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape"
+                android:gravity="center"
+                android:text="৫ স্টার দিন"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20.0dip" />
+
+            <Space
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+   >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="@string/banner_home_footer" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="ভালবাসি এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="ভ্যালেন্টাইন'স এসএমএস "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="প্রথম প্রেমের এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="প্রেমের কবিতা"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="10.0dip"
+                    android:text="রোমান্টিক প্রেমের এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textIsSelectable="true"
+                    android:textSize="22.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="মিষ্টি প্রেমের এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="শ্রেষ্ট প্রেমের এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="মনে পরার এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn9"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="মেয়ে পটানোর এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+
+
+                <Button
+                    android:id="@+id/btn10"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/dra"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="5.0dip"
+                    android:text="কষ্টের এসএমএস"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
+
+

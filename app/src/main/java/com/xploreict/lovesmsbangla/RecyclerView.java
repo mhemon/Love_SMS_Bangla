@@ -1,0 +1,28 @@
+package com.xploreict.lovesmsbangla;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+
+
+public class RecyclerView extends AppCompatActivity {
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recycler_view);
+        androidx.recyclerview.widget.RecyclerView recyclerView= (androidx.recyclerview.widget.RecyclerView) findViewById(R.id.recyclerview);
+        LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_right_to_left);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        String[] messages = {"জীবনে ভালোবাসা আসার পূর্বে হাজার বছর একা থাকা যায়। কিন্তু ভালোবাসার পর এক মুহুর্ত একা থাকা যায় না আর ভালোবাসার মানুষটি কিছু সময়ের জন্য কাছে না থাকলে মন টা কেমন বেকুল হয়ে থাকে তাকে কাছে পাওয়ার জন্য হইতোবা এটাই বাস্তবতা....","কাউকে আবেগের ভালোবাসা দিওনা, মনের ভালোবাসা দিও ! কারন আবেগের ভালোবাসা একদিন বিবেকের কাছে হেরে যাবে আর মনের ভালোবাসা চিরদিন থেকে যাবে... ___এলটন ডি","আমি বলতে চাই- বলতে পারিনাই । আমি জানাতে চাই- জানাতে পারিনাই । আমি বুঝাতে চাই- বুঝাতে পারিনাই । আজ সময় এসেছে তাই বলছি, তুমি আমার বাসাই মুরগি চুরি করতে কেন গিয়েছিলে ? উত্তর দাও…!","প্রেম তুমি বরই কঠিন প্রেমে না পরলে বুঝা যায় না। প্রেম তুমি বরই কঠিন প্রেমে না পরলে জীবনকে অনুভব করা যায় না","তুমি সেই স্বপ্নপরী যাকে নিয়ে স্বপ্ন দেখি। তুমি সেই অনুভুতি যাকে আমার মন অনুভব করে। তুমি সেই প্রেমিকা যার ভালবাসার ছন্দ প্রেমিক আমি।","তুমি আমার সৃষ্টিসীমার বাইরে হতে পারকিন্তূ আমার হৃদয় থেকে দূরে নয়॥তুমি আমার নাগালের বাইরে যেতে পারকিন্তূ আমার মন থেকে নয়॥আমি তোমার কাছে কিছু না হতে পারি!But তুমি আমার জীবনের সবকিছু॥","হতে পার তুমি মন থেকে দুরে তথাপিরয়েছো মোর নয়নপুরে॥হয়তো তুমি নেই এই হৃদয়েতবুও রয়েছো পরশেরই ভিতরে।কারণ ভালবাসি শুধুই তোমারে॥"," চাঁদ তুমি যেমন রাতকে ভালোবাস আমিও ঠিক তেমনি ই করে একজনকে ভালোবাসি তোমার ভালোবাসা যেমন কেউ বুঝে না ঠিক তেমনই করে পপি আমার ভালোবাসা বুঝে না","এ নিষ্ঠুর পৃথিবীতে সত্যিকারের ভালোবাসা পাওয়া বড় দায়, সবাই মিষ্টি কথা বলেমন ভোলাতে চায়।আসলে থাকে না কারো অন্তরে ভালোবাসা,স্বার্থের লাগি আছে কাছে মনে অন্য আশা।স্বার্থ উদ্বার হয়ে গেলে,দুঃখ দিয়ে কেটে পড়ে।"," এ নিষ্ঠুর পৃথিবীতে সত্যিকারের ভালোবাসা পাওয়া বড় দায়, সবাই মিষ্টি কথা বলে মন ভোলাতে চায়। আসলে থাকে না কারো অন্তরে ভালোবাসা, স্বার্থের লাগি আছে কাছে মনে অন্য আশা। স্বার্থ উদ্বার হয়ে গেলে, দুঃখ দিয়ে কেটে পড়ে।"};
+        recyclerView.setAdapter(new RecyclerAdapter(messages));
+        recyclerView.setLayoutAnimation(controller);
+        recyclerView.getAdapter().notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
+  }
+}
